@@ -66,5 +66,5 @@ DjangoGram/
 * Users can like and unlike posts. This functionality is handled using JavaScript for a seamless user experience.
 
 ![Registration](README_images/Screenshot%202024-07-30%20at%2021.33.03.png)
-![Feed](README_images/Screenshot 2024-07-30 at 21.33.49.png)
+![Feed](README_images/Screenshot%2024-07-30%at%21.33.49.png)
 
