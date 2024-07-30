@@ -1,0 +1,36 @@
+# Ignore virtual environment directory
+venv/
+.env
+/.env
+# Ignore all SQLite database files
+*.sqlite3
+db.sqlite3
+
+# Ignore Python bytecode compiled files
+*.pyc
+
+# Ignore Python cache directories
+__pycache__/
+
+# Ignore .idea
+.idea/
+.idea
+
+# Ignore coverage reports
+.coverage
+htmlcov/
+
+# Ignore media files that are generated
+.media
+/media
+.staticfiles
+/staticfiles
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+node_modules/
+.node_modules
+/node_modules

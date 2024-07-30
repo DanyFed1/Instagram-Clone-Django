@@ -1,0 +1,28 @@
+{% extends "allauth/layouts/entrance.html" %}
+{% load i18n socialaccount %}
+{% block content %}
+<h1>{% trans "Sign Up" %}</h1>
+<p>{% trans "Already have an account? Then please sign in." %}</p>
+
+<!-- Display form errors -->
+{% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>{% trans "Errors:" %}</strong>
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<form method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">{% trans "Sign Up" %}</button>
+</form>
+
+<h3>{% trans "Or use a third-party" %}</h3>
+<a href="{% provider_login_url 'github' %}" class="btn btn-secondary">{% trans "GitHub" %}</a>
+<a href="{% provider_login_url 'google' %}" class="btn btn-secondary">{% trans "Google" %}</a>
+{% endblock %}

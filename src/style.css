@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #fafafa;
+    color: #262626;
+    line-height: 1.6;
+    padding-top: 60px; /* for fixed header */
+}
+
+header {
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    max-width: 935px;
+    margin: 0 auto;
+    height: 52px;
+    align-items: center;
+}
+
+.logo a,
+.nav-item a {
+    color: #262626;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-group {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item a {
+    color: #262626;
+    text-decoration: none;
+}
+
+.main {
+    margin-top: 72px; /* Clear fixed header */
+}
+
+.container {
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.alert,
+.messages {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.form-signin {
+    max-width: 400px;
+    margin: auto;
+}
+
+.avatar {
+    width: 100px; /* Smaller avatar size */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+button, input[type="submit"] {
+    color: #fff;
+    background-color: #3897f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #2677bd;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Additional styles for responsiveness and interaction */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links,
+    .logo {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .form-signin,
+    .container {
+        padding: 15px;
+    }
+}
+
+.footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #dbdbdb;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-section,
+.footer a {
+    color: #262626;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer a:hover {
+    color: #ff0000;
+}
+
+.post-detail img, .imgBx img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.card {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.card .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .imgBx {
+    margin-top: 10px;
+}
+
+.card .bottom {
+    margin-top: 10px;
+}
+
+.userDetails .profilepic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userDetails .profilepic img {
+    width: 100%;
+    height: auto;
+}
+
+/* Ensuring that the profile image is smaller and aligns with the username */
+.profilepic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profilepic img.profile-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Adjusting user info styles to align properly next to the profile image */
+.user-info {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+}
+
+.user-info h3 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.user-info span {
+    font-size: 12px;
+    color: #777;
+}
+
+.follow-button .btn {
+    color: #fff;
+    background-color: #3897f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.follow-button .btn:hover {
+    background-color: #2677bd;
+}
+
+.unfollow-btn {
+    background-color: #ff6347;
+}
+
+.unfollow-btn:hover {
+    background-color: #e5533d;
+}
+
+/* Highlight form errors */
+.alert-danger p {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center">Register</h2>
+
+        <!-- Display form errors -->
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <strong>Errors:</strong>
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post" class="mt-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+
+        <h3 class="text-center mt-4">Or register using:</h3>
+        <a href="{% provider_login_url 'github' %}" class="btn btn-secondary w-100 mb-2">Register with GitHub</a>
+        <a href="{% provider_login_url 'google' %}" class="btn btn-secondary w-100 mb-2">Register with Google</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ user.username }}'s Profile</h2>
+<!-- Display user information -->
+<p>Full name: {{ user.profile.full_name }}</p>
+<p>Bio: {{ user.profile.bio }}</p>
+<!-- Display the profile image if it exists -->
+{% if user.profile.avatar %}
+    <img src="{{ user.profile.avatar.url }}" alt="{{ user.username }} Profile Image" class="profile-image">
+{% else %}
+    <p>No profile image uploaded.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-detail">
+    <div class="card">
+        <div class="top">
+            <div class="userDetails">
+                <div class="profilepic">
+                    <img src="{{ post.author.profile.avatar.url }}" alt="Profile image" class="profile-image">
+                </div>
+                <div class="user-info">
+                    <h3>{{ post.author.username }}</h3>
+                    <span>{{ post.date_posted|date:"M d, Y" }}</span>
+                </div>
+            </div>
+            <a href="{% url 'posts:post_detail' pk=post.pk %}">Details</a>
+        </div>
+        <div class="imgBx">
+            {% for image in post.images.all %}
+            <img src="{{ image.image_file.url }}" alt="Post image" class="cover">
+            {% empty %}
+            <p>No images uploaded for this post.</p>
+            {% endfor %}
+        </div>
+        <div class="bottom">
+            <p>{{ post.content }}</p>
+            <p>Tags: {% if post.tags.all %}{{ post.tags.all|join:", " }}{% else %}No tags{% endif %}</p>
+            {% if user.is_authenticated %}
+            <a href="#" class="like-btn" data-post-id="{{ post.id }}">Like</a>
+            <span>{{ post.liked_by.count }} Likes</span>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+            {% if not post.author == user %}
+            <div class="follow-button">
+                {% if post.author in user.following.all %}
+                <button class="btn unfollow-btn" data-user-id="{{ post.author.id }}">Unfollow</button>
+                {% else %}
+                <button class="btn follow-btn" data-user-id="{{ post.author.id }}">Follow</button>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
